@@ -6,16 +6,20 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 public enum ErrorDetail {
 
 	// 1xxx SYSTEM errors
-	INTERNAL_SERVER_ERROR("SITEMAP_1001", "internal.server.error", ErrorType.SYSTEM,
+	INTERNAL_SERVER_ERROR("WALLETMS_1001", "internal.server.error", ErrorType.SYSTEM,
 			"An internal server error occurred. Please try after sometime."),
-	USER_NOT_AUTHENTICATED("SITEMAP_1002", "user.not.authenticated", ErrorType.SYSTEM, "User not authenticated."),
-	NOT_ALLOWED_TO_USE_APP("SITEMAP_1003", "not.allowed.to.use.app", ErrorType.SYSTEM,
+	USER_NOT_AUTHENTICATED("WALLETMS_1002", "user.not.authenticated", ErrorType.SYSTEM, "User not authenticated."),
+	NOT_ALLOWED_TO_USE_APP("WALLETMS_1003", "not.allowed.to.use.app", ErrorType.SYSTEM,
 			"You are not allowed to use this app."),
-	SOFT_UPGRADE_AVAILABLE("SITEMAP_1004", "soft.upgrade.available", ErrorType.SYSTEM, "Soft upgrade available."),
-	HARD_UPGRADE_REQUIRED("SITEMAP_1005", "hard.upgrade.required", ErrorType.SYSTEM, "Hard upgrade required.");
+	SOFT_UPGRADE_AVAILABLE("WALLETMS_1004", "soft.upgrade.available", ErrorType.SYSTEM, "Soft upgrade available."),
+	HARD_UPGRADE_REQUIRED("WALLETMS_1005", "hard.upgrade.required", ErrorType.SYSTEM, "Hard upgrade required."),
 
 	// 2xxx VALIDATION errors
-
+	INSUFFICIENT_FUND("WALLETMS_2001", "insufficient.fund", ErrorType.BUSINESS, "Insufficient funds."),
+	WALLET_NOT_FOUND("WALLETMS_2002", "wallet.not.found", ErrorType.BUSINESS, "Wallet not found."),
+	HOLD_NOT_FOUND("WALLETMS_2003", "hold.not.found", ErrorType.BUSINESS, "Hold not found."),
+	HOLD_NOT_ACTIVE("WALLETMS_2004", "hold.not.active", ErrorType.BUSINESS, "Hold not active.");
+	
 	private static final String TO_STRING_TEMPLATE = "code: %s, propertyKey: %s, errorType: %s, defaultMessage: %s";
 
 	String code;
