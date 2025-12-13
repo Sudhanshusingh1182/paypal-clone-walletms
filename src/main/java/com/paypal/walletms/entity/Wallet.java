@@ -32,10 +32,10 @@ public class Wallet {
 	private String currency;
 	
 	@Column(nullable = false)
-	private Long balance;
+	private Double balance;
 	
 	@Column(nullable = false)
-	private Long availableBalance;
+	private Double availableBalance;
 	
 	@Column(nullable = false)
 	private LocalDateTime createdDate;

@@ -35,7 +35,7 @@ public class WalletHold {
     private String holdReference;
 
     @Column(nullable = false)
-    private Long amount;
+    private Double amount;
 
     @Column(nullable = false)
     private String status; // ACTIVE, CAPTURED, RELEASED

@@ -36,9 +36,9 @@ public class HoldExpiryScheduler {
 			
 			for(WalletHold walletHold: walletHoldList) {
 				String holdRef = walletHold.getHoldReference();
-				WalletServiceImpl.releaseHold(holdRef);
+				walletServiceImpl.releaseHold(holdRef);
 				log.debug("expireOldHolds:: Expired hold released: {}", holdRef);
-			}
+			} 
 		} catch (Exception e) {
 			log.error(StringUtils.ERROR_STR, e.getClass(), e.getLocalizedMessage(), e);
 		}

@@ -11,6 +11,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class DebitRequest {
 	private Long userId;
-	private Long amount;
+	private Double amount;
 	private String currency;
 }

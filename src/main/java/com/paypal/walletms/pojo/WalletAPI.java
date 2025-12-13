@@ -13,6 +13,6 @@ public class WalletAPI {
 	private Long id;
 	private Long userId;
 	private String currency;
-	private Long balance;
-	private Long availableBalance;
+	private Double balance;
+	private Double availableBalance;
 }
