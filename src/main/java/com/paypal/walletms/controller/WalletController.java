@@ -1,8 +1,6 @@
 package com.paypal.walletms.controller;
 
-import org.antlr.v4.runtime.misc.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -61,7 +59,7 @@ public class WalletController {
 	}
 
 	@GetMapping("/api/walletms/v1/wallet")
-	public WalletResponse getWallet(@RequestParam(required = true) Long userId) {
+	public WalletResponse getWallet(@RequestParam(name = "userId", required = true) Long userId) {
 		long currentTime = System.currentTimeMillis();
 		try {
 			return walletServiceImpl.getWallet(userId);
@@ -91,7 +89,7 @@ public class WalletController {
 	}
 
 	@PostMapping("/api/walletms/v1/release")
-	public WalletHoldResponse releaseHold(@RequestParam(required = true) String holdReference) {
+	public WalletHoldResponse releaseHold(@RequestParam(name = "holdReference", required = true) String holdReference) {
 		long currentTime = System.currentTimeMillis();
 		try {
 			return walletServiceImpl.releaseHold(holdReference);

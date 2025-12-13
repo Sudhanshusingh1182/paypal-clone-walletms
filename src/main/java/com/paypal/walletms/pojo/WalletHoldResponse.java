@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class WalletHoldResponse {
 	private String holdReference;
-	private Long amount;
+	private Double amount;
 	private String status;
 	private List<ErrorDetail> errorDetailList;
 }

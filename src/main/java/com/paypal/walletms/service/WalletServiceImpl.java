@@ -48,7 +48,7 @@ public class WalletServiceImpl {
 			log.debug("createWallet:: createWalletRequest: {}", createWalletRequest);
 
 			Wallet wallet = Wallet.builder().userId(createWalletRequest.getUserId())
-					.currency(createWalletRequest.getCurrency()).balance(0L).availableBalance(0L)
+					.currency(createWalletRequest.getCurrency()).balance(0D).availableBalance(0D)
 					.createdDate(LocalDateTime.now()).modifiedDate(LocalDateTime.now()).build();
 
 			Wallet savedWallet = walletRepo.save(wallet);
